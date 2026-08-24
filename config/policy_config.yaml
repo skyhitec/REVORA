@@ -1,0 +1,31 @@
+policy:
+  version: "1.0.0"
+  min_expected_recovery_value: 5.0 # Min net INR value required for positive intervention
+  optimal_threshold_tau: 0.1600 # Frozen optimal threshold from Phase 2
+
+intervention_costs:
+  RETRY: 10.0
+  DELAY_AND_RETRY: 12.0
+  RETRY_WITH_CAUTION: 15.0
+  CUSTOMER_ACTION_REQUIRED: 5.0
+  ESCALATE: 25.0
+  BLOCK: 0.0
+  NO_ACTION: 0.0
+
+friction_penalties:
+  base_friction: 2.0
+  failure_multiplier: 1.5
+  max_friction_penalty: 50.0
+
+constraints:
+  global_max_intervention_rate: 0.30 # Cap intervention to top 30% of failures
+  global_max_retry_budget: 100000.0 # Total budget cap across batch execution (INR)
+  max_retries_per_transaction: 2
+  customer_rolling_24h_retry_cap: 3
+  high_value_escalation_threshold: 10000.0 # INR amount requiring escalation if auth failure/bank decline
+  high_value_bank_inquiry_threshold: 5000.0
+
+risk:
+  low_threshold: 30.0
+  medium_threshold: 55.0
+  high_threshold: 80.0

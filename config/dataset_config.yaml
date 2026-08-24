@@ -1,0 +1,131 @@
+dataset:
+  seed: 42
+  default_rows: 20000
+  sample_rows: 1000
+
+distributions:
+  success_rate: 0.70 # Overall payment success rate (70% SUCCESS, 30% FAILED)
+  
+  currencies:
+    INR: 0.85
+    USD: 0.10
+    EUR: 0.05
+
+  payment_methods:
+    UPI: 0.50
+    CREDIT_CARD: 0.25
+    DEBIT_CARD: 0.15
+    NET_BANKING: 0.07
+    WALLET: 0.03
+
+  gateways:
+    RAZORPAY: 0.45
+    HDFC_PG: 0.20
+    ICICI_PG: 0.15
+    CASHFREE: 0.12
+    BILLDESK: 0.08
+
+  merchant_categories:
+    ECOMMERCE: 0.35
+    SAAS: 0.20
+    EDTECH: 0.15
+    GAMING: 0.15
+    FINANCIAL_SERVICES: 0.10
+    UTILITIES: 0.05
+
+  device_types:
+    MOBILE_ANDROID: 0.55
+    MOBILE_IOS: 0.25
+    DESKTOP_WINDOWS: 0.12
+    DESKTOP_MAC: 0.08
+
+taxonomy:
+  SUCCESS:
+    is_retryable: false
+    base_recovery_prob: null
+    description: "Transaction completed successfully."
+  TEMPORARY_GATEWAY_FAILURE:
+    weight: 0.25
+    is_retryable: true
+    base_recovery_prob: 0.75
+    description: "Transient gateway downtime or rate limit."
+  NETWORK_ERROR:
+    weight: 0.20
+    is_retryable: true
+    base_recovery_prob: 0.70
+    description: "Network timeout between merchant, gateway, and bank."
+  INSUFFICIENT_FUNDS:
+    weight: 0.20
+    is_retryable: true
+    base_recovery_prob: 0.45
+    description: "Customer account balance insufficient at transaction time."
+  BANK_DECLINED:
+    weight: 0.12
+    is_retryable: false
+    base_recovery_prob: 0.20
+    description: "Issuing bank declined transaction without specific reason."
+  AUTHENTICATION_FAILURE:
+    weight: 0.08
+    is_retryable: false
+    base_recovery_prob: 0.30
+    description: "3DS / OTP verification failed or timed out."
+  FRAUD_RISK_BLOCK:
+    weight: 0.05
+    is_retryable: false
+    base_recovery_prob: 0.05
+    description: "Transaction flagged by risk engine or fraud rules."
+  EXPIRED_CARD:
+    weight: 0.04
+    is_retryable: false
+    base_recovery_prob: 0.10
+    description: "Card expiry date has passed."
+  INVALID_PAYMENT_DETAILS:
+    weight: 0.03
+    is_retryable: false
+    base_recovery_prob: 0.08
+    description: "Incorrect card number, CVV, or UPI ID."
+  UNKNOWN_FAILURE:
+    weight: 0.03
+    is_retryable: true
+    base_recovery_prob: 0.40
+    description: "Unclassified or ambiguous error response."
+
+validation:
+  required_columns:
+    - transaction_id
+    - customer_id
+    - merchant_id
+    - amount
+    - currency
+    - payment_method
+    - payment_gateway
+    - card_type
+    - transaction_timestamp
+    - customer_payment_success_rate
+    - customer_previous_transactions
+    - customer_previous_failures
+    - days_since_last_successful_payment
+    - device_type
+    - device_id
+    - ip_risk_score
+    - customer_location
+    - merchant_category
+    - merchant_risk_score
+    - avs_result
+    - cvv_result
+    - authentication_result
+    - bank_response_code
+    - gateway_response_code
+    - payment_status
+    - failure_code
+    - failure_reason
+    - is_retryable
+    - recovery_probability_target
+    - recovered
+
+  leakage_candidate_columns:
+    - final_recovery_timestamp
+    - post_recovery_transaction_status
+    - actual_recovery_action_result
+    - recovered_amount
+    - future_retry_outcome
