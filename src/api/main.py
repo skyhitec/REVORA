@@ -15,6 +15,7 @@ from src.api.routes import (
     simulate_router,
     audit_router,
     metrics_router,
+    demo_router,
 )
 
 
@@ -88,6 +89,7 @@ def create_app() -> FastAPI:
     app.include_router(simulate_router)
     app.include_router(audit_router)
     app.include_router(metrics_router)
+    app.include_router(demo_router)
 
     return app
 

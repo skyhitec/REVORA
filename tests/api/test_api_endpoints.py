@@ -137,6 +137,24 @@ def test_metrics_endpoint():
     assert data["intervention_rate"] > 0
 
 
+def test_demo_scenarios_endpoint():
+    """Test GET /api/v1/demo/scenarios returns list of 5 buildathon demo scenarios."""
+    response = client.get("/api/v1/demo/scenarios")
+    assert response.status_code == 200
+    data = response.json()
+    assert len(data) == 5
+    assert data[0]["id"] == "gateway_retry"
+
+
+def test_demo_run_endpoint():
+    """Test POST /api/v1/demo/run/fraud_block executes fraud block scenario."""
+    response = client.post("/api/v1/demo/run/fraud_block")
+    assert response.status_code == 200
+    data = response.json()
+    assert data["decision"] == "BLOCK"
+    assert data["risk_level"] == "CRITICAL"
+
+
 def test_malformed_request_handling():
     """Test handling of malformed JSON payload returns 422 validation error."""
     response = client.post(
