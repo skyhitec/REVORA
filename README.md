@@ -347,6 +347,10 @@ pytest -q
 4. **Cryptographic Audit Verifier**: Interactive SHA-256 hash-chain verification tool displaying total records, Genesis hash, and tamper-proof badge.
 5. **Buildathon Demo Studio**: 5 pre-configured one-click scenario cards for live demonstrations.
 
+<img width="1912" height="981" alt="image" src="https://github.com/user-attachments/assets/68e359b4-f99e-4e6f-9e5a-d86d79e20225" />
+
+<img width="1918" height="960" alt="image" src="https://github.com/user-attachments/assets/5e19e03e-35a6-49bb-a514-e729cda6ae52" />
+
 ---
 
 ## 🔒 Cryptographic Audit System
@@ -359,6 +363,9 @@ REVORA guarantees append-only audit trail immutability using SHA-256 cryptograph
 - **Sequential Chain Link ($H_i$)**:
   $$H_i = \text{SHA256}(H_{i-1} \parallel \text{CanonicalJSON}(R_i))$$
 - **Tamper Detection**: `AuditVerifier.verify_audit_file()` reads records sequentially, re-evaluates all composite hashes, and flags any altered characters, missing lines, or reordered records in $O(N)$ linear time.
+
+<img width="1907" height="971" alt="image" src="https://github.com/user-attachments/assets/d2d75abd-5546-478e-a56e-e3f271c1a3e9" />
+
 
 ---
 
@@ -382,6 +389,9 @@ REVORA guarantees append-only audit trail immutability using SHA-256 cryptograph
   $$\text{Net ERV} = \text{Gross ERV} - \text{Intervention Cost} - \text{Friction Penalty}$$
 - **Explanation Generation**: Automated natural language rationale text explaining the decision and policy checks.
 
+<img width="1907" height="982" alt="image" src="https://github.com/user-attachments/assets/8f502404-7863-4a8c-b5c1-de612b2f0a53" />
+
+
 ---
 
 ## 🎬 Buildathon Demo Scenarios
@@ -391,6 +401,8 @@ REVORA guarantees append-only audit trail immutability using SHA-256 cryptograph
 3. **Fraud Risk Block**: High probability ($92\%$) overridden by mandatory `FRAUD_RISK_BLOCK` guardrail $\rightarrow$ `BLOCK` (Rose).
 4. **Expired Card Customer Nudge**: Non-retryable `EXPIRED_CARD` failure $\rightarrow$ `CUSTOMER_ACTION_REQUIRED` (Gold).
 5. **Negative ERV Skip**: Low probability ($12\%$) where retry cost exceeds expected recovery $\rightarrow$ `NO_ACTION` (Blue).
+
+<img width="1918" height="1035" alt="image" src="https://github.com/user-attachments/assets/59c79812-5c7f-4a66-8167-17aa77694eb2" />
 
 ---
 
