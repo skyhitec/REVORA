@@ -1,12 +1,21 @@
 # REVORA — Autonomous Payment Failure Recovery & Decision Engine
 
+[![Razorpay RIFT Buildathon 2025](https://img.shields.io/badge/Razorpay_RIFT-Buildathon_2025-blueviolet?style=for-the-badge&logo=razorpay)](https://razorpay.com/buildathon/)
 [![Pytest Status](https://img.shields.io/badge/pytest-58%20passed-10B981?style=for-the-badge&logo=pytest)](tests/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-1.0.0-009688?style=for-the-badge&logo=fastapi)](src/api/)
 [![React](https://img.shields.io/badge/React-18.0-61DAFB?style=for-the-badge&logo=react)](frontend/)
 [![Vite](https://img.shields.io/badge/Vite-5.0-646CFF?style=for-the-badge&logo=vite)](frontend/)
 [![Git Tag](https://img.shields.io/badge/Git%20Tag-phase--4--complete-8B5CF6?style=for-the-badge&logo=git)](https://github.com/skyhitec/REVORA)
 
-REVORA is an autonomous, production-grade payment failure recovery and policy decision system. It combines calibrated machine learning predictions, multi-signal risk classification, deterministic safety guardrails, Expected Recovery Value (ERV) financial math, and cryptographic SHA-256 tamper-evident audit logging.
+REVORA is an autonomous, production-grade payment failure recovery and policy decision system engineered for the **[Razorpay RIFT Buildathon 2025](https://razorpay.com/buildathon/)**. It combines calibrated machine learning predictions, multi-signal risk classification, deterministic safety guardrails, Expected Recovery Value (ERV) financial math, and cryptographic SHA-256 tamper-evident audit logging.
+
+---
+
+## 🏆 Built for Razorpay RIFT Buildathon 2025
+
+> **Official Event Details**: [Razorpay RIFT Buildathon](https://razorpay.com/buildathon/)  
+> **Challenge Domain**: Autonomous Financial Systems & Smart Payment Operations  
+> **Core Mission**: Intelligently maximize payment failure recovery yield while eliminating unnecessary retries, chargeback risks, and operational friction.
 
 ---
 
