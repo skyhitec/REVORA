@@ -1,6 +1,6 @@
 # REVORA — Autonomous Payment Failure Recovery & Decision Engine
 
-[![Razorpay RIFT Buildathon 2025](https://img.shields.io/badge/Razorpay_RIFT-Buildathon_2025-blueviolet?style=for-the-badge&logo=razorpay)](https://razorpay.com/buildathon/)
+[![Razorpay RIFT Buildathon 2026](https://img.shields.io/badge/Razorpay_RIFT-Buildathon_2025-blueviolet?style=for-the-badge&logo=razorpay)](https://razorpay.com/buildathon/)
 [![Pytest Status](https://img.shields.io/badge/pytest-58%20passed-10B981?style=for-the-badge&logo=pytest)](tests/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-1.0.0-009688?style=for-the-badge&logo=fastapi)](src/api/)
 [![React](https://img.shields.io/badge/React-18.0-61DAFB?style=for-the-badge&logo=react)](frontend/)
